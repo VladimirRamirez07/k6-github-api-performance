@@ -31,29 +31,45 @@ k6 run -e GITHUB_TOKEN=your_token tests/search-repos.js
 k6 run -e GITHUB_TOKEN=your_token tests/list-issues.js
 k6 run -e GITHUB_TOKEN=your_token tests/traffic-spike.js
 ```
+## 📊 Local Visualization (Grafana + InfluxDB)
+
+```bash
+# Start InfluxDB and Grafana
+docker compose up -d
+
+# Run tests sending metrics to InfluxDB
+k6 run -e GITHUB_TOKEN=your_token --out influxdb=http://localhost:8086/k6 tests/search-repos.js
+```
+
+Open Grafana at `http://localhost:3001` (user: `admin`, password: `admin`)  
+Import `grafana/dashboard.json` to visualize results.
 
 ## 📁 Project Structure
 
-```
 k6-github-api-performance/
 ├── .github/
 │   └── workflows/
 │       └── performance.yml
 ├── config/
 │   └── thresholds.js
+├── grafana/
+│   └── dashboard.json
 ├── tests/
 │   ├── search-repos.js
 │   ├── list-issues.js
 │   └── traffic-spike.js
 ├── .gitignore
+├── docker-compose.yml
 └── README.md
-```
+
 ## 🛠️ Tech Stack
 
 - **k6** — Performance testing engine
 - **JavaScript** — Test scripting
 - **GitHub Actions** — CI/CD automation
 - **Grafana** — Metrics visualization
+- **InfluxDB** — Metrics storage
+- **Docker** — Container orchestration
 
 ## 👤 Author
 
