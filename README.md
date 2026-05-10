@@ -33,6 +33,8 @@ k6 run -e GITHUB_TOKEN=your_token tests/traffic-spike.js
 ```
 
 ## 📁 Project Structure
+
+```
 k6-github-api-performance/
 ├── .github/
 │   └── workflows/
@@ -45,6 +47,7 @@ k6-github-api-performance/
 │   └── traffic-spike.js
 ├── .gitignore
 └── README.md
+```
 ## 🛠️ Tech Stack
 
 - **k6** — Performance testing engine
