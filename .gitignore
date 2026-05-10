@@ -1,0 +1,15 @@
+# Variables de entorno
+.env
+*.env
+
+# Reportes locales
+results/
+*.json
+!grafana/dashboard.json
+
+# Node
+node_modules/
+
+# VS Code
+.vscode/
+.sixth/
