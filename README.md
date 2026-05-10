@@ -46,6 +46,7 @@ Import `grafana/dashboard.json` to visualize results.
 
 ## 📁 Project Structure
 
+```
 k6-github-api-performance/
 ├── .github/
 │   └── workflows/
@@ -61,6 +62,7 @@ k6-github-api-performance/
 ├── .gitignore
 ├── docker-compose.yml
 └── README.md
+```
 
 ## 🛠️ Tech Stack
 
